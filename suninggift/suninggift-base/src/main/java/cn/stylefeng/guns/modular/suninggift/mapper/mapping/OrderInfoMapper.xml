@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.suninggift.mapper.OrderInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.suninggift.entity.OrderInfo">
+        <id column="out_trade_no" property="outTradeNo" />
+        <result column="taobao_id" property="taobaoId" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="name" property="name" />
+        <result column="operator" property="operator" />
+        <result column="phone" property="phone" />
+        <result column="total_fee" property="totalFee" />
+        <result column="transfer_id" property="transferId" />
+        <result column="user_id" property="userId" />
+        <result column="item_id" property="itemId" />
+        <result column="process_states" property="processStates" />
+        <result column="operator_order_id" property="operatorOrderId" />
+        <result column="debit_order_id" property="debitOrderId" />
+        <result column="contract_id" property="contractId" />
+        <result column="auth_no" property="authNo" />
+        <result column="payee_logon_id" property="payeeLogonId" />
+        <result column="payee_user_id" property="payeeUserId" />
+        <result column="freeze_month" property="freezeMonth" />
+        <result column="order_pay_amount" property="orderPayAmount" />
+        <result column="product_id" property="productId" />
+        <result column="out_port_no" property="outPortNo" />
+        <result column="spec_psn_id" property="specPsnId" />
+        <result column="field1" property="field1" />
+        <result column="field2" property="field2" />
+        <result column="field3" property="field3" />
+        <result column="order_line_id" property="orderLineId" />
+        <result column="province_code" property="provinceCode" />
+        <result column="city_code" property="cityCode" />
+        <result column="app_id" property="appId" />
+        <result column="operator_code" property="operatorCode" />
+        <result column="business_type" property="businessType" />
+        <result column="user_name" property="userName" />
+        <result column="auth_order_no" property="authOrderNo" />
+        <result column="operation_id" property="operationId" />
+        <result column="auth_request_no" property="authRequestNo" />
+        <result column="is_pay_success" property="isPaySuccess" />
+        <result column="out_agency_no" property="outAgencyNo" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        out_trade_no AS "outTradeNo", taobao_id AS "taobaoId", status AS "status", create_time AS "createTime", update_time AS "updateTime", name AS "name", operator AS "operator", phone AS "phone", total_fee AS "totalFee", transfer_id AS "transferId", user_id AS "userId", item_id AS "itemId", process_states AS "processStates", operator_order_id AS "operatorOrderId", debit_order_id AS "debitOrderId", contract_id AS "contractId", auth_no AS "authNo", payee_logon_id AS "payeeLogonId", payee_user_id AS "payeeUserId", freeze_month AS "freezeMonth", order_pay_amount AS "orderPayAmount", product_id AS "productId", out_port_no AS "outPortNo", spec_psn_id AS "specPsnId", field1 AS "field1", field2 AS "field2", field3 AS "field3", order_line_id AS "orderLineId", province_code AS "provinceCode", city_code AS "cityCode", app_id AS "appId"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.OrderInfoResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.OrderInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from order_info where 1 = 1
+        <if test="paramCondition.outTradeNo != null">
+            and out_trade_no = #{paramCondition.outTradeNo}
+        </if>
+        <if test="paramCondition.phone != null">
+            and phone = #{paramCondition.phone}
+        </if>
+        <if test="paramCondition.status != null">
+            and status = #{paramCondition.status}
+        </if>
+        <if test="paramCondition.processStates != null">
+            and process_states = #{paramCondition.processStates}
+        </if>
+        <if test="paramCondition.startTime != null and paramCondition.endTime != null">
+            and create_time between #{paramCondition.startTime} and #{paramCondition.endTime}
+        </if>
+        order by create_time desc
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.OrderInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from order_info where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.OrderInfoResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.OrderInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from order_info where 1 = 1
+        <if test="paramCondition.outTradeNo != null">
+            and out_trade_no = #{paramCondition.outTradeNo}
+        </if>
+        <if test="paramCondition.phone != null">
+            and phone = #{paramCondition.phone}
+        </if>
+        <if test="paramCondition.status != null">
+            and status = #{paramCondition.status}
+        </if>
+        <if test="paramCondition.processStates != null">
+            and process_states = #{paramCondition.processStates}
+        </if>
+        <if test="paramCondition.startTime != null and paramCondition.endTime != null">
+            and create_time between #{paramCondition.startTime} and #{paramCondition.endTime}
+        </if>
+        order by create_time desc
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.OrderInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from order_info where 1 = 1
+    </select>
+
+    <select id="queryOrderListInfo" resultType="cn.stylefeng.guns.modular.suninggift.entity.OrderInfo" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.OrderInfoParam">
+        select *
+        from order_info where 1 = 1
+        <if test="paramCondition.startTime != null and paramCondition.endTime != null">
+            and (create_time between #{paramCondition.startTime} and #{paramCondition.endTime}
+            or update_time between #{paramCondition.startTime} and #{paramCondition.endTime})
+        </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.suninggift.mapper.PhoneOperatorProvinceCityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.suninggift.entity.PhoneOperatorProvinceCity">
+        <id column="phone" property="phone" />
+        <result column="operator" property="operator" />
+        <result column="province" property="province" />
+        <result column="city" property="city" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        phone AS "phone", operator AS "operator", province AS "province", city AS "city", create_time AS "createTime"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.PhoneOperatorProvinceCityResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PhoneOperatorProvinceCityParam">
+        select
+        <include refid="Base_Column_List"/>
+        from phone_operator_province_city where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PhoneOperatorProvinceCityParam">
+        select
+        <include refid="Base_Column_List"/>
+        from phone_operator_province_city where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.PhoneOperatorProvinceCityResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PhoneOperatorProvinceCityParam">
+        select
+        <include refid="Base_Column_List"/>
+        from phone_operator_province_city where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PhoneOperatorProvinceCityParam">
+        select
+        <include refid="Base_Column_List"/>
+        from phone_operator_province_city where 1 = 1
+    </select>
+
+</mapper>

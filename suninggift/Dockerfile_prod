@@ -1,0 +1,16 @@
+FROM   registry-vpc.cn-beijing.aliyuncs.com/lepeng/centos:latest
+MAINTAINER nmk
+
+
+COPY  suninggift-main/target/suninggift-main-1.0.0-SNAPSHOT.jar /home/App.jar
+COPY  start-prod.sh /home/start-prod.sh
+RUN chmod +x /home/start-prod.sh
+ENV  JAVA_HOME=/usr/local/java
+ENV  PATH $JAVA_HOME/bin:$PATH
+ENV  CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+ENV LC_ALL="en_US.UTF-8"
+ENV LANG="en_US.UTF-8"
+
+ENV ACTIVE=prod
+EXPOSE 8996
+CMD ["/home/start-prod.sh"]

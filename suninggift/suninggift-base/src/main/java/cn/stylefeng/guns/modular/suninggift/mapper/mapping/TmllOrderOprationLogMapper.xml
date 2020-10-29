@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.suninggift.mapper.TmllOrderOprationLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.suninggift.entity.TmllOrderOprationLog">
+        <id column="id" property="id" />
+        <result column="tmall_order_no" property="tmallOrderNo" />
+        <result column="out_trade_no" property="outTradeNo" />
+        <result column="our_order_no" property="ourOrderNo" />
+        <result column="order_no" property="orderNo" />
+        <result column="operation_type" property="operationType" />
+        <result column="month" property="month" />
+        <result column="found_amount" property="foundAmount" />
+        <result column="phone_no" property="phoneNo" />
+        <result column="tmall_status" property="tmallStatus" />
+        <result column="deploy_status" property="deployStatus" />
+        <result column="tmall_request" property="tmallRequest" />
+        <result column="tmall_response" property="tmallResponse" />
+        <result column="deploy_request" property="deployRequest" />
+        <result column="deploy_response" property="deployResponse" />
+        <result column="inst_date" property="instDate" />
+        <result column="update_date" property="updateDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", tmall_order_no AS "tmallOrderNo", out_trade_no AS "outTradeNo", our_order_no AS "ourOrderNo", order_no AS "orderNo", operation_type AS "operationType", month AS "month", found_amount AS "foundAmount", phone_no AS "phoneNo", tmall_status AS "tmallStatus", deploy_status AS "deployStatus", tmall_request AS "tmallRequest", tmall_response AS "tmallResponse", deploy_request AS "deployRequest", deploy_response AS "deployResponse", inst_date AS "instDate", update_date AS "updateDate"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.TmllOrderOprationLogResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.TmllOrderOprationLogParam">
+        select
+        <include refid="Base_Column_List"/>
+        from tmll_order_opration_log where 1 = 1
+            <if test="paramCondition.id != null and paramCondition.id != ''">
+                and id like CONCAT('%',#{paramCondition.id},'%')
+            </if>
+            <if test="paramCondition.tmallOrderNo != null and paramCondition.tmallOrderNo != ''">
+                and tmall_order_no like CONCAT('%',#{paramCondition.tmallOrderNo},'%')
+            </if>
+            <if test="paramCondition.outTradeNo != null and paramCondition.outTradeNo != ''">
+                and out_trade_no like CONCAT('%',#{paramCondition.outTradeNo},'%')
+            </if>
+            <if test="paramCondition.ourOrderNo != null and paramCondition.ourOrderNo != ''">
+                and our_order_no like CONCAT('%',#{paramCondition.ourOrderNo},'%')
+            </if>
+            <if test="paramCondition.orderNo != null and paramCondition.orderNo != ''">
+                and order_no like CONCAT('%',#{paramCondition.orderNo},'%')
+            </if>
+            <if test="paramCondition.operationType != null and paramCondition.operationType != ''">
+                and operation_type like CONCAT('%',#{paramCondition.operationType},'%')
+            </if>
+            <if test="paramCondition.month != null and paramCondition.month != ''">
+                and month like CONCAT('%',#{paramCondition.month},'%')
+            </if>
+            <if test="paramCondition.foundAmount != null and paramCondition.foundAmount != ''">
+                and found_amount like CONCAT('%',#{paramCondition.foundAmount},'%')
+            </if>
+            <if test="paramCondition.phoneNo != null and paramCondition.phoneNo != ''">
+                and phone_no like CONCAT('%',#{paramCondition.phoneNo},'%')
+            </if>
+            <if test="paramCondition.tmallStatus != null and paramCondition.tmallStatus != ''">
+                and tmall_status like CONCAT('%',#{paramCondition.tmallStatus},'%')
+            </if>
+            <if test="paramCondition.deployStatus != null and paramCondition.deployStatus != ''">
+                and deploy_status like CONCAT('%',#{paramCondition.deployStatus},'%')
+            </if>
+            <if test="paramCondition.tmallRequest != null and paramCondition.tmallRequest != ''">
+                and tmall_request like CONCAT('%',#{paramCondition.tmallRequest},'%')
+            </if>
+            <if test="paramCondition.tmallResponse != null and paramCondition.tmallResponse != ''">
+                and tmall_response like CONCAT('%',#{paramCondition.tmallResponse},'%')
+            </if>
+            <if test="paramCondition.deployRequest != null and paramCondition.deployRequest != ''">
+                and deploy_request like CONCAT('%',#{paramCondition.deployRequest},'%')
+            </if>
+            <if test="paramCondition.deployResponse != null and paramCondition.deployResponse != ''">
+                and deploy_response like CONCAT('%',#{paramCondition.deployResponse},'%')
+            </if>
+            <if test="paramCondition.instDate != null and paramCondition.instDate != ''">
+                and inst_date like CONCAT('%',#{paramCondition.instDate},'%')
+            </if>
+            <if test="paramCondition.updateDate != null and paramCondition.updateDate != ''">
+                and update_date like CONCAT('%',#{paramCondition.updateDate},'%')
+            </if>
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.TmllOrderOprationLogParam">
+        select
+        <include refid="Base_Column_List"/>
+        from tmll_order_opration_log where 1 = 1
+            <if test="paramCondition.id != null and paramCondition.id != ''">
+                and id like CONCAT('%',#{paramCondition.id},'%')
+            </if>
+            <if test="paramCondition.tmallOrderNo != null and paramCondition.tmallOrderNo != ''">
+                and tmall_order_no like CONCAT('%',#{paramCondition.tmallOrderNo},'%')
+            </if>
+            <if test="paramCondition.outTradeNo != null and paramCondition.outTradeNo != ''">
+                and out_trade_no like CONCAT('%',#{paramCondition.outTradeNo},'%')
+            </if>
+            <if test="paramCondition.ourOrderNo != null and paramCondition.ourOrderNo != ''">
+                and our_order_no like CONCAT('%',#{paramCondition.ourOrderNo},'%')
+            </if>
+            <if test="paramCondition.orderNo != null and paramCondition.orderNo != ''">
+                and order_no like CONCAT('%',#{paramCondition.orderNo},'%')
+            </if>
+            <if test="paramCondition.operationType != null and paramCondition.operationType != ''">
+                and operation_type like CONCAT('%',#{paramCondition.operationType},'%')
+            </if>
+            <if test="paramCondition.month != null and paramCondition.month != ''">
+                and month like CONCAT('%',#{paramCondition.month},'%')
+            </if>
+            <if test="paramCondition.foundAmount != null and paramCondition.foundAmount != ''">
+                and found_amount like CONCAT('%',#{paramCondition.foundAmount},'%')
+            </if>
+            <if test="paramCondition.phoneNo != null and paramCondition.phoneNo != ''">
+                and phone_no like CONCAT('%',#{paramCondition.phoneNo},'%')
+            </if>
+            <if test="paramCondition.tmallStatus != null and paramCondition.tmallStatus != ''">
+                and tmall_status like CONCAT('%',#{paramCondition.tmallStatus},'%')
+            </if>
+            <if test="paramCondition.deployStatus != null and paramCondition.deployStatus != ''">
+                and deploy_status like CONCAT('%',#{paramCondition.deployStatus},'%')
+            </if>
+            <if test="paramCondition.tmallRequest != null and paramCondition.tmallRequest != ''">
+                and tmall_request like CONCAT('%',#{paramCondition.tmallRequest},'%')
+            </if>
+            <if test="paramCondition.tmallResponse != null and paramCondition.tmallResponse != ''">
+                and tmall_response like CONCAT('%',#{paramCondition.tmallResponse},'%')
+            </if>
+            <if test="paramCondition.deployRequest != null and paramCondition.deployRequest != ''">
+                and deploy_request like CONCAT('%',#{paramCondition.deployRequest},'%')
+            </if>
+            <if test="paramCondition.deployResponse != null and paramCondition.deployResponse != ''">
+                and deploy_response like CONCAT('%',#{paramCondition.deployResponse},'%')
+            </if>
+            <if test="paramCondition.instDate != null and paramCondition.instDate != ''">
+                and inst_date like CONCAT('%',#{paramCondition.instDate},'%')
+            </if>
+            <if test="paramCondition.updateDate != null and paramCondition.updateDate != ''">
+                and update_date like CONCAT('%',#{paramCondition.updateDate},'%')
+            </if>
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.TmllOrderOprationLogResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.TmllOrderOprationLogParam">
+        select
+        <include refid="Base_Column_List"/>
+        from tmll_order_opration_log where 1 = 1
+            <if test="paramCondition.id != null and paramCondition.id != ''">
+                and id like CONCAT('%',#{paramCondition.id},'%')
+            </if>
+            <if test="paramCondition.tmallOrderNo != null and paramCondition.tmallOrderNo != ''">
+                and tmall_order_no like CONCAT('%',#{paramCondition.tmallOrderNo},'%')
+            </if>
+            <if test="paramCondition.outTradeNo != null and paramCondition.outTradeNo != ''">
+                and out_trade_no like CONCAT('%',#{paramCondition.outTradeNo},'%')
+            </if>
+            <if test="paramCondition.ourOrderNo != null and paramCondition.ourOrderNo != ''">
+                and our_order_no like CONCAT('%',#{paramCondition.ourOrderNo},'%')
+            </if>
+            <if test="paramCondition.orderNo != null and paramCondition.orderNo != ''">
+                and order_no like CONCAT('%',#{paramCondition.orderNo},'%')
+            </if>
+            <if test="paramCondition.operationType != null and paramCondition.operationType != ''">
+                and operation_type like CONCAT('%',#{paramCondition.operationType},'%')
+            </if>
+            <if test="paramCondition.month != null and paramCondition.month != ''">
+                and month like CONCAT('%',#{paramCondition.month},'%')
+            </if>
+            <if test="paramCondition.foundAmount != null and paramCondition.foundAmount != ''">
+                and found_amount like CONCAT('%',#{paramCondition.foundAmount},'%')
+            </if>
+            <if test="paramCondition.phoneNo != null and paramCondition.phoneNo != ''">
+                and phone_no like CONCAT('%',#{paramCondition.phoneNo},'%')
+            </if>
+            <if test="paramCondition.tmallStatus != null and paramCondition.tmallStatus != ''">
+                and tmall_status like CONCAT('%',#{paramCondition.tmallStatus},'%')
+            </if>
+            <if test="paramCondition.deployStatus != null and paramCondition.deployStatus != ''">
+                and deploy_status like CONCAT('%',#{paramCondition.deployStatus},'%')
+            </if>
+            <if test="paramCondition.tmallRequest != null and paramCondition.tmallRequest != ''">
+                and tmall_request like CONCAT('%',#{paramCondition.tmallRequest},'%')
+            </if>
+            <if test="paramCondition.tmallResponse != null and paramCondition.tmallResponse != ''">
+                and tmall_response like CONCAT('%',#{paramCondition.tmallResponse},'%')
+            </if>
+            <if test="paramCondition.deployRequest != null and paramCondition.deployRequest != ''">
+                and deploy_request like CONCAT('%',#{paramCondition.deployRequest},'%')
+            </if>
+            <if test="paramCondition.deployResponse != null and paramCondition.deployResponse != ''">
+                and deploy_response like CONCAT('%',#{paramCondition.deployResponse},'%')
+            </if>
+            <if test="paramCondition.instDate != null and paramCondition.instDate != ''">
+                and inst_date like CONCAT('%',#{paramCondition.instDate},'%')
+            </if>
+            <if test="paramCondition.updateDate != null and paramCondition.updateDate != ''">
+                and update_date like CONCAT('%',#{paramCondition.updateDate},'%')
+            </if>
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.TmllOrderOprationLogParam">
+        select
+        <include refid="Base_Column_List"/>
+        from tmll_order_opration_log where 1 = 1
+            <if test="paramCondition.id != null and paramCondition.id != ''">
+                and id like CONCAT('%',#{paramCondition.id},'%')
+            </if>
+            <if test="paramCondition.tmallOrderNo != null and paramCondition.tmallOrderNo != ''">
+                and tmall_order_no like CONCAT('%',#{paramCondition.tmallOrderNo},'%')
+            </if>
+            <if test="paramCondition.outTradeNo != null and paramCondition.outTradeNo != ''">
+                and out_trade_no like CONCAT('%',#{paramCondition.outTradeNo},'%')
+            </if>
+            <if test="paramCondition.ourOrderNo != null and paramCondition.ourOrderNo != ''">
+                and our_order_no like CONCAT('%',#{paramCondition.ourOrderNo},'%')
+            </if>
+            <if test="paramCondition.orderNo != null and paramCondition.orderNo != ''">
+                and order_no like CONCAT('%',#{paramCondition.orderNo},'%')
+            </if>
+            <if test="paramCondition.operationType != null and paramCondition.operationType != ''">
+                and operation_type like CONCAT('%',#{paramCondition.operationType},'%')
+            </if>
+            <if test="paramCondition.month != null and paramCondition.month != ''">
+                and month like CONCAT('%',#{paramCondition.month},'%')
+            </if>
+            <if test="paramCondition.foundAmount != null and paramCondition.foundAmount != ''">
+                and found_amount like CONCAT('%',#{paramCondition.foundAmount},'%')
+            </if>
+            <if test="paramCondition.phoneNo != null and paramCondition.phoneNo != ''">
+                and phone_no like CONCAT('%',#{paramCondition.phoneNo},'%')
+            </if>
+            <if test="paramCondition.tmallStatus != null and paramCondition.tmallStatus != ''">
+                and tmall_status like CONCAT('%',#{paramCondition.tmallStatus},'%')
+            </if>
+            <if test="paramCondition.deployStatus != null and paramCondition.deployStatus != ''">
+                and deploy_status like CONCAT('%',#{paramCondition.deployStatus},'%')
+            </if>
+            <if test="paramCondition.tmallRequest != null and paramCondition.tmallRequest != ''">
+                and tmall_request like CONCAT('%',#{paramCondition.tmallRequest},'%')
+            </if>
+            <if test="paramCondition.tmallResponse != null and paramCondition.tmallResponse != ''">
+                and tmall_response like CONCAT('%',#{paramCondition.tmallResponse},'%')
+            </if>
+            <if test="paramCondition.deployRequest != null and paramCondition.deployRequest != ''">
+                and deploy_request like CONCAT('%',#{paramCondition.deployRequest},'%')
+            </if>
+            <if test="paramCondition.deployResponse != null and paramCondition.deployResponse != ''">
+                and deploy_response like CONCAT('%',#{paramCondition.deployResponse},'%')
+            </if>
+            <if test="paramCondition.instDate != null and paramCondition.instDate != ''">
+                and inst_date like CONCAT('%',#{paramCondition.instDate},'%')
+            </if>
+            <if test="paramCondition.updateDate != null and paramCondition.updateDate != ''">
+                and update_date like CONCAT('%',#{paramCondition.updateDate},'%')
+            </if>
+    </select>
+
+</mapper>

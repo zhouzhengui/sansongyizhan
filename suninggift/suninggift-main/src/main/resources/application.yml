@@ -1,0 +1,42 @@
+server:
+  port: 8992
+  max-http-header-size: 10240
+#  ssl:
+#    key-store-password: duan123
+#    key-store: classpath:tomcat.keystore
+#    keyStoreType: JKS
+#    keyAlias: tomcat
+
+guns:
+  spring-session-open: true        #是否开启spring session,如果是多机环境需要开启(true/false)
+  session-invalidate-time: 1800     #session失效时间(只在单机环境下生效，多机环境在SpringSessionConfig类中配置) 单位：秒
+  session-validation-interval: 900  #多久检测一次失效的session(只在单机环境下生效) 单位：秒
+
+beetl:
+  resource-auto-check: true         #热加载beetl模板，开发时候用
+
+spring:
+  profiles:
+    active: local
+  jta:
+    enabled: false
+    log-dir: transaction-logs
+  mvc:
+    view:
+      prefix: /pages
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+  application:
+    name: 'suninggift-service'
+
+mybatis-plus:
+  typeAliasesPackage: cn.stylefeng.guns.modular.system.model
+  mapper-locations:
+    - classpath*:cn/stylefeng/guns/**/mapping/*.xml
+  configuration:
+    log-impl:
+topicName:
+  kafka: red-package-test
+profile: local

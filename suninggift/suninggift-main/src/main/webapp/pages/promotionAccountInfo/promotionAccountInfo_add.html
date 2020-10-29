@@ -1,0 +1,153 @@
+@layout("/common/_form.html",{js:["/assets/promotionAccountInfo/promotionAccountInfo_add.js"]}){
+
+<form class="layui-form" id="promotionAccountInfoForm" lay-filter="promotionAccountInfoForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="id" type="hidden"/>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="accountName" name="accountName" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="accountPid" name="accountPid" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="accountNickName" name="accountNickName" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="appId" name="appId" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="privateKey" name="privateKey" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="publicKey" name="publicKey" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="platformPublicKey" name="platformPublicKey" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="charset" name="charset" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="signType" name="signType" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="createTime" name="createTime" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="updateTime" name="updateTime" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="approveName" name="approveName" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="remark" name="remark" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="field1" name="field1" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="field2" name="field2" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="field3" name="field3" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">1可以0不可以<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="status" name="status" placeholder="请输入1可以0不可以" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="sysServicePid" name="sysServicePid" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="platformType" name="platformType" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="format" name="format" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="royaltPids" name="royaltPids" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label"><span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="defaultRoyaltPid" name="defaultRoyaltPid" placeholder="请输入" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" ew-event="closeDialog">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}

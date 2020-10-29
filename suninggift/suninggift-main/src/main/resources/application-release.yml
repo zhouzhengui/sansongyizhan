@@ -1,0 +1,149 @@
+#Oracle配置
+#spring:
+#  datasource:
+#    driverClassName: oracle.jdbc.OracleDriver
+#    url: jdbc:oracle:thin:@127.0.0.1:1521:guns
+#    username: root
+#    password: root
+#    filters: wall,mergeStat
+
+#SQLServer配置
+#spring:
+#  datasource:
+#    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://127.0.0.1:1433;DatabaseName=guns
+#    username: root
+#    password: root
+#    filters: wall,mergeStat
+
+#PostgreSQL配置
+#spring:
+#  datasource:
+#    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://127.0.0.1:5432/guns
+#    username: root
+#    password: root
+#    filters: wall,mergeStat
+server:
+  port: 9992
+  max-http-header-size: 10240
+  servlet:
+    context-path: /
+
+#ahas:
+#  namespace: prod   #tdev\dev\
+project:
+  name: prod-suninggift
+
+# Mysql数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-2zef4ra42bbxak6pg.mysql.rds.aliyuncs.com/suninggift?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
+    username: suninggift
+    password: Lpsd#jnqieDdHas
+    filters: wall,mergeStat
+    data-source-name: gunsdb
+  #redis配置
+  redis:
+    host: lepeng-basic-redis.redis.rds.aliyuncs.com
+    port: 10080
+    password: gh7w09aZ@2019
+    database: 10
+    timeout: 6000000           # 连接超时时间
+    jedis:
+      pool:
+        max-active: 20        # 连接池最大连接数（使用负值表示没有限制） 默认 8
+        max-wait: 6000000        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+        max-idle: 8           # 连接池中的最大空闲连接 默认 8
+        in-idle: 0           # 连接池中的最小空闲连接 默认 0
+        max-total: 20
+        min-idle: 0
+
+  # 邮件发送配置（改为自己的账号和密码）
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: sn93@qq.com
+    password: xxxpassword
+  kafka:
+    # 消费者
+    consumer:
+      group-id: lepeng-prod
+      auto-offset-reset: earliest
+      bootstrap-servers: 172.17.53.164:9092,172.17.53.166:9092,172.17.53.165:9092
+    # 生产者
+    producer:
+      bootstrap-servers: 172.17.53.164:9092,172.17.53.166:9092,172.17.53.165:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+topicName:
+  kafka: suninggift-prod
+# 邮件发送（改为自己的账号）
+mail:
+  from: sn93@qq.com
+
+logging:
+  level:
+    root:  info
+    org.springframework:  info
+    org.mybatis:  info
+    cn.stylefeng.guns:  info
+    com.gzlplink:  info
+    com.atomikos.jdbc: error
+    springfox.documentation.spring.web.readers.operation: error
+  config: classpath:log4j2-boot-release.xml
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          #开启hystrix 超时功能
+          enabled: false
+        isolation:
+          thread:
+            #hystrix 超时时间设置    zull<hystrix<ribbon
+            timeoutInMilliseconds: 90000
+      circuitBreaker:
+        #默认10s内至少请求20次，熔断才发挥作用
+        requestVolumeThreshold: 20
+        #断路器跳闸后，在此值的时间的内，hystrix会拒绝新的请求，只有过了这个时间断路器才会打开闸门
+        sleepWindowInMilliseconds: 5000
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: messagesend
+  #请求处理的超时时间  zull<hystrix<ribbon
+  ReadTimeout: 90000
+  #请求连接的超时时间
+  ConnectTimeout: 5000
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: 'http://boot.gzlplink.com/eureka/eureka'
+profile: release
+
+xxl:
+  job:
+    accessToken:
+    executor:
+      logpath: /data/gzlp/suninggift/log
+      logretentiondays: 30
+      appname: suninggift-job
+      ip:
+      port: 60051
+    admin:
+      addresses: https://www.gzlplink.com/gzlp-job/
+
+mps-client-sdk:
+  app-id: 1002
+  app-secret: 8944551863544835
+  sign:
+    enabled: true
+  url:
+    baseconfig: http://inwww.gzlplink.com/mps-mdm-baseconfig-srv

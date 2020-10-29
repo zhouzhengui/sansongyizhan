@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.suninggift.mapper.PromotionAccountInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.suninggift.entity.PromotionAccountInfo">
+        <id column="id" property="id" />
+        <result column="account_name" property="accountName" />
+        <result column="account_pid" property="accountPid" />
+        <result column="account_nick_name" property="accountNickName" />
+        <result column="app_id" property="appId" />
+        <result column="private_key" property="privateKey" />
+        <result column="public_key" property="publicKey" />
+        <result column="platform_public_key" property="platformPublicKey" />
+        <result column="charset" property="charset" />
+        <result column="sign_type" property="signType" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="approve_name" property="approveName" />
+        <result column="remark" property="remark" />
+        <result column="field1" property="field1" />
+        <result column="field2" property="field2" />
+        <result column="field3" property="field3" />
+        <result column="status" property="status" />
+        <result column="sys_service_pid" property="sysServicePid" />
+        <result column="platform_type" property="platformType" />
+        <result column="format" property="format" />
+        <result column="royalt_pids" property="royaltPids" />
+        <result column="default_royalt_pid" property="defaultRoyaltPid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", account_name AS "accountName", account_pid AS "accountPid", account_nick_name AS "accountNickName", app_id AS "appId", private_key AS "privateKey", public_key AS "publicKey", platform_public_key AS "platformPublicKey", charset AS "charset", sign_type AS "signType", create_time AS "createTime", update_time AS "updateTime", approve_name AS "approveName", remark AS "remark", field1 AS "field1", field2 AS "field2", field3 AS "field3", status AS "status", sys_service_pid AS "sysServicePid", platform_type AS "platformType", format AS "format", royalt_pids AS "royaltPids", default_royalt_pid AS "defaultRoyaltPid"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.PromotionAccountInfoResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PromotionAccountInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from promotion_account_info where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PromotionAccountInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from promotion_account_info where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.suninggift.model.result.PromotionAccountInfoResult" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PromotionAccountInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from promotion_account_info where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.suninggift.model.params.PromotionAccountInfoParam">
+        select
+        <include refid="Base_Column_List"/>
+        from promotion_account_info where 1 = 1
+    </select>
+
+</mapper>
